@@ -1,0 +1,20 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture2D"
+uid="uid://bpwv2rfeq0iqb"
+path="res://.godot/imported/wall mano 1.png-a0c83a313a011d13ef1dd382ea8b587d.res"
+group_file="res://level 1 map/Assests/wall_atlas_2.png"
+valid=true
+[deps]
+
+
+source_file="res://level 1 map/Assests/wall mano 1.png"
+dest_files=["res://.godot/imported/wall mano 1.png-a0c83a313a011d13ef1dd382ea8b587d.res"]
+
+[params]
+
+atlas_file="res://level 1 map/Assests/wall_atlas_2.png"
+import_mode=0
+crop_to_region=false
+trim_alpha_border_from_region=true
