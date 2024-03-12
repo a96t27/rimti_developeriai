@@ -1,18 +1,29 @@
 class_name MainMenu
 extends Control
-@onready var play_button = $MarginContainer/HBoxContainer/VBoxContainer/Play_Button as Button
-@onready var options_button = $MarginContainer/HBoxContainer/VBoxContainer/Options_Button as Button
-@onready var quit_button = $MarginContainer/HBoxContainer/VBoxContainer/Quit_Button as Button
-#@onready var start_level = preload() as PackedScene
+@onready var play_button =  %Play_Button
+@onready var options_button = %Options_Button
+@onready var quit_button = %Quit_Button
+@export var start_level: PackedScene
+@onready var options_menu = %Options_Menu as OptionsMenu
+@onready var margin_container = $MarginContainer as MarginContainer
+
 func _ready():
-	play_button.button_down.connect(on_play_pressed)
-	options_button.button_down.connect(on_options_pressed)
-	quit_button.button_down.connect(on_exit_pressed)
+	handle_connecting_signals()
+
 func on_play_pressed() -> void:
-	#get_tree().change_scene_to_packed(start_level)
-	pass
+	get_tree().change_scene_to_packed(start_level)
+
 func on_exit_pressed() -> void:
 	get_tree().quit()
+
 func on_options_pressed() -> void:
-	#get_tree().change_scene_to_packed()
-	pass
+	margin_container.visible = false
+	options_menu.set_process(true)
+	options_menu.visible = true
+
+func on_back_options_menu() -> void:
+	margin_container.visible = true
+	options_menu.visible = false
+
+func handle_connecting_signals() -> void:
+	options_menu.exit_options_menu.connect(on_back_options_menu)

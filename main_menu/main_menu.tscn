@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgdnnytxvj3nq"]
+[gd_scene load_steps=7 format=3 uid="uid://cgdnnytxvj3nq"]
 
-[ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_nywdk"]
+[ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_admdi"]
 [ext_resource type="Texture2D" uid="uid://od63c4gpnk52" path="res://Backgrounds/MainMenu.jpg" id="1_x42ps"]
+[ext_resource type="PackedScene" uid="uid://dea04121a8d5g" path="res://player/player.tscn" id="2_k1skr"]
+[ext_resource type="PackedScene" uid="uid://cye6kookfgtq4" path="res://options_menu/options_menu.tscn" id="3_lxane"]
 
 [sub_resource type="SystemFont" id="SystemFont_pmjjw"]
 font_names = PackedStringArray("Impact")
@@ -16,7 +18,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_nywdk")
+script = ExtResource("1_admdi")
+start_level = ExtResource("2_k1skr")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -44,10 +47,7 @@ theme_override_constants/margin_bottom = 12
 layout_mode = 2
 theme_override_constants/separation = 150
 
-[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="GameName" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -57,6 +57,9 @@ theme_override_font_sizes/font_size = 64
 text = "GAME TITLE"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -71,6 +74,7 @@ alignment = 1
 layout_mode = 2
 
 [node name="Play_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_7udyp")
@@ -78,6 +82,7 @@ theme_override_font_sizes/font_size = 24
 text = "Play"
 
 [node name="Options_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_7udyp")
@@ -86,9 +91,19 @@ text = "Options
 "
 
 [node name="Quit_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_7udyp")
 theme_override_font_sizes/font_size = 24
 text = "Quit
 "
+
+[node name="Options_Menu" parent="." instance=ExtResource("3_lxane")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/Play_Button" to="." method="on_play_pressed"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/Options_Button" to="." method="on_options_pressed"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/Quit_Button" to="." method="on_exit_pressed"]
