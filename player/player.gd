@@ -1,9 +1,15 @@
 extends CharacterBody2D
 
-@export var speed = 400
+@export var speed = 50
+@export var health = 4
 var movement_direction = Vector2.ZERO
 
+signal health_changed(value)
+
 func _physics_process(delta):
+	if health <= 0:
+		death()
+		
 	get_input()
 	velocity = movement_direction * speed
 	move_and_slide()
@@ -21,3 +27,11 @@ func get_input():
 	elif Input.is_action_pressed("move_down"):
 		movement_direction = Vector2.DOWN
 		rotation_degrees = 270
+
+
+func death():
+	queue_free()
+
+func take_damage():
+	health -= 1
+	emit_signal("health_changed", health)
