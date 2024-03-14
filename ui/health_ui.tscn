@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmaiwmvso3ifw"]
+
+[ext_resource type="Script" path="res://ui/health_ui.gd" id="1_8jbty"]
+[ext_resource type="Texture2D" uid="uid://demnu0b2g0tb4" path="res://ui/resources/Over-Bar.png" id="2_kv6na"]
+[ext_resource type="Texture2D" uid="uid://vojmnamx0j2g" path="res://ui/resources/Progress-Bar.png" id="3_qqpjw"]
+
+[node name="health_ui" type="CanvasLayer"]
+script = ExtResource("1_8jbty")
+
+[node name="HealthUIEmpty" type="TextureRect" parent="."]
+offset_right = 128.0
+offset_bottom = 32.0
+texture = ExtResource("2_kv6na")
+stretch_mode = 1
+
+[node name="HealthUIFull" type="TextureRect" parent="."]
+offset_right = 128.0
+offset_bottom = 32.0
+texture = ExtResource("3_qqpjw")
+stretch_mode = 1
