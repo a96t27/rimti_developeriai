@@ -2,16 +2,14 @@
 
 [ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_admdi"]
 [ext_resource type="Texture2D" uid="uid://od63c4gpnk52" path="res://main_menu/resources/main_menu.jpg" id="1_x42ps"]
-[ext_resource type="PackedScene" uid="uid://mgvj1w7ngr3l" path="res://level/level.tscn" id="2_gvp33"]
+[ext_resource type="PackedScene" uid="uid://mgvj1w7ngr3l" path="res://level/level.tscn" id="2_g6lhx"]
 [ext_resource type="PackedScene" uid="uid://cye6kookfgtq4" path="res://options_menu/options_menu.tscn" id="3_lxane"]
 
 [sub_resource type="SystemFont" id="SystemFont_pmjjw"]
 font_names = PackedStringArray("Impact")
-subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_7udyp"]
 font_names = PackedStringArray("Impact")
-subpixel_positioning = 0
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -21,7 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_admdi")
-start_level = ExtResource("2_gvp33")
+start_level = ExtResource("2_g6lhx")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -105,4 +103,3 @@ layout_mode = 1
 [connection signal="button_down" from="VBoxContainer/HBoxContainer/VBoxContainer/Play_Button" to="." method="on_play_pressed"]
 [connection signal="button_down" from="VBoxContainer/HBoxContainer/VBoxContainer/Options_Button" to="." method="on_options_pressed"]
 [connection signal="button_down" from="VBoxContainer/HBoxContainer/VBoxContainer/Quit_Button" to="." method="on_exit_pressed"]
-[connection signal="exit_options_menu" from="OptionsMenu" to="." method="_on_exit_options_menu"]

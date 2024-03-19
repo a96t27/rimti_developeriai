@@ -17,8 +17,7 @@ func on_exit_pressed() -> void:
 	get_tree().quit()
 
 func on_options_pressed() -> void:
-	v_box_container.visible = false
+	v_box_container.hide()
 	options_menu.state = true
-
-func _on_exit_options_menu() -> void:
+	await options_menu.exit_options_menu
 	v_box_container.show()

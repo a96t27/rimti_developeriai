@@ -1,4 +1,10 @@
+class_name PauseMenu
 extends Control
+
+
+var main_menu: PackedScene = load("res://main_menu/main_menu.tscn")
+
+@export var options_menu: OptionsMenu
 
 @onready var state: bool:
 	set(value):
@@ -7,9 +13,6 @@ extends Control
 		get_tree().paused = value
 	get:
 		return state
-
-@export var options_menu: OptionsMenu
-@export var main_menu: PackedScene
 
 
 func _ready():
@@ -20,7 +23,7 @@ func _input(event: InputEvent):
 		state = !state
 
 func _on_resume_button_pressed():
-	state = true
+	state = false
 
 
 func _on_quit_button_pressed():
@@ -31,7 +34,6 @@ func _on_main_menu_button_pressed():
 	if main_menu:
 		get_tree().paused = false
 		get_tree().change_scene_to_packed(main_menu)
-
 
 
 func _on_options_button_pressed():
