@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dolgbr0346iq8"]
 
 [ext_resource type="Script" path="res://player/testing/damage_object/damage_object.gd" id="1_mjyj3"]
-[ext_resource type="Texture2D" uid="uid://mqhtc4xy607j" path="res://player/testing/damage_object/resources/png-transparent-monster-cartoon-illustration-this-monster-is-not-terrible-funny-fictional-character-graphic-arts-thumbnail.png" id="2_7gljp"]
+[ext_resource type="Texture2D" uid="uid://mqhtc4xy607j" path="res://player/testing/damage_object/resources/enemy_placeholder.png" id="2_7gljp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6o5fv"]
 size = Vector2(124, 126)

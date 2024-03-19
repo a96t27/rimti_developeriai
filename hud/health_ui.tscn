@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmaiwmvso3ifw"]
 
-[ext_resource type="Script" path="res://ui/health_ui.gd" id="1_8jbty"]
-[ext_resource type="Texture2D" uid="uid://demnu0b2g0tb4" path="res://ui/resources/Over-Bar.png" id="2_kv6na"]
-[ext_resource type="Texture2D" uid="uid://vojmnamx0j2g" path="res://ui/resources/Progress-Bar.png" id="3_qqpjw"]
+[ext_resource type="Script" path="res://hud/health_ui.gd" id="1_8jbty"]
+[ext_resource type="Texture2D" uid="uid://demnu0b2g0tb4" path="res://hud/resources/over_bar.png" id="2_kv6na"]
+[ext_resource type="Texture2D" uid="uid://vojmnamx0j2g" path="res://hud/resources/progress_bar.png" id="3_qqpjw"]
 
 [node name="health_ui" type="CanvasLayer"]
 script = ExtResource("1_8jbty")

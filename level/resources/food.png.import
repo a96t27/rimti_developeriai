@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsag08vygx4l0"
-path="res://.godot/imported/level_1.png-1e3056ce84208d0dcc21dea1bf0b8d59.ctex"
+uid="uid://do0pc4cfcd00s"
+path="res://.godot/imported/food.png-636d58a7199a21de7e0fbecafc2bc775.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://level 1 map/Assests/level_1.png"
-dest_files=["res://.godot/imported/level_1.png-1e3056ce84208d0dcc21dea1bf0b8d59.ctex"]
+source_file="res://level/resources/food.png"
+dest_files=["res://.godot/imported/food.png-636d58a7199a21de7e0fbecafc2bc775.ctex"]
 
 [params]
 
