@@ -1,14 +1,14 @@
 class_name MainMenu
 extends Control
+
+@export var start_level: PackedScene
+
 @onready var play_button =  %Play_Button
 @onready var options_button = %Options_Button
 @onready var quit_button = %Quit_Button
-@export var start_level: PackedScene
-@onready var options_menu = %Options_Menu as OptionsMenu
+@onready var options_menu: OptionsMenu = %OptionsMenu
 @onready var v_box_container: VBoxContainer = $VBoxContainer
 
-func _ready():
-	handle_connecting_signals()
 
 func on_play_pressed() -> void:
 	get_tree().change_scene_to_packed(start_level)
@@ -18,12 +18,7 @@ func on_exit_pressed() -> void:
 
 func on_options_pressed() -> void:
 	v_box_container.visible = false
-	options_menu.set_process(true)
-	options_menu.visible = true
+	options_menu.state = true
 
-func on_back_options_menu() -> void:
-	v_box_container.visible = true
-	options_menu.visible = false
-
-func handle_connecting_signals() -> void:
-	options_menu.exit_options_menu.connect(on_back_options_menu)
+func _on_exit_options_menu() -> void:
+	v_box_container.show()

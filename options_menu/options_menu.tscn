@@ -12,6 +12,7 @@ font_names = PackedStringArray("Impact")
 subpixel_positioning = 0
 
 [node name="Options_Menu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -51,6 +52,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
@@ -58,4 +60,4 @@ theme_override_fonts/font = SubResource("SystemFont_qrylv")
 theme_override_font_sizes/font_size = 16
 text = "Back"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/BackButton" to="." method="back_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_pressed"]
