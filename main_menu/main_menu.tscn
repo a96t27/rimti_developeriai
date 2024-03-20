@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgdnnytxvj3nq"]
+[gd_scene load_steps=8 format=3 uid="uid://cgdnnytxvj3nq"]
 
 [ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_admdi"]
 [ext_resource type="Texture2D" uid="uid://od63c4gpnk52" path="res://Backgrounds/MainMenu.jpg" id="1_x42ps"]
 [ext_resource type="PackedScene" uid="uid://dea04121a8d5g" path="res://player/player.tscn" id="2_k1skr"]
 [ext_resource type="PackedScene" uid="uid://cye6kookfgtq4" path="res://options_menu/options_menu.tscn" id="3_lxane"]
+[ext_resource type="AudioStream" uid="uid://d2ju74c0wwogh" path="res://music/MainMenu.ogg" id="5_7m4ih"]
 
 [sub_resource type="SystemFont" id="SystemFont_pmjjw"]
 font_names = PackedStringArray("Impact")
@@ -99,6 +100,12 @@ size_flags_horizontal = 3
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_7m4ih")
+volume_db = -32.0
+autoplay = true
+bus = &"Music"
 
 [connection signal="button_down" from="VBoxContainer/HBoxContainer/VBoxContainer/Play_Button" to="." method="on_play_pressed"]
 [connection signal="button_down" from="VBoxContainer/HBoxContainer/VBoxContainer/Options_Button" to="." method="on_options_pressed"]
