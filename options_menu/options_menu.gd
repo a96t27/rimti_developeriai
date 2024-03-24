@@ -1,4 +1,5 @@
 class_name OptionsMenu
+
 extends Control
 
 
@@ -12,7 +13,12 @@ signal exit_options_menu
 			exit_options_menu.emit()
 	get:
 		return state
-		
+
+@onready var settings_tab_container = $MarginContainer/VBoxContainer/Settings_Tab_Container as SettingsTabContainer
+
+func _ready():
+	settings_tab_container.Exit_Options_Menu.connect(_on_back_pressed)
+	set_process(false)
 
 func _on_back_pressed() -> void:
 	state = false
