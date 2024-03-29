@@ -31,7 +31,7 @@ func get_input():
 
 
 func death():
-	queue_free()
+	get_tree().change_scene_to_file("res://game_over_menu/game_over_menu.tscn")
 
 func take_damage():
 	health -= 1
