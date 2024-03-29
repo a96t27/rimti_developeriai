@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtefi0mnenqeb"]
+[gd_scene load_steps=4 format=3 uid="uid://dtefi0mnenqeb"]
 
+[ext_resource type="Script" path="res://level/maistas.gd" id="1_3kqv6"]
 [ext_resource type="Texture2D" uid="uid://do0pc4cfcd00s" path="res://level/resources/food.png" id="1_vqnde"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prhnr"]
 size = Vector2(7, 7)
 
 [node name="Maistas" type="Area2D"]
+script = ExtResource("1_3kqv6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -14,3 +16,5 @@ texture = ExtResource("1_vqnde")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_prhnr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

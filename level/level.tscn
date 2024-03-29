@@ -77,11 +77,11 @@ texture = ExtResource("4_1vm84")
 6:1/0 = 0
 6:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:1/0/physics_layer_0/angular_velocity = 0.0
-6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, -1, 2.625, -1, 2.625, -8, 8, -8, 8, 8, -7, 8)
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:1/0 = 0
 7:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:1/0/physics_layer_0/angular_velocity = 0.0
-7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -3.25, -8, -3, -1.25, 6.75, -1.25, 6.875, 8, -8, 8)
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:2/0 = 0
 0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:2/0/physics_layer_0/angular_velocity = 0.0
@@ -152,7 +152,7 @@ resource_name = "enities"
 scenes/1/scene = ExtResource("5_on0qv")
 
 [sub_resource type="TileSet" id="TileSet_2xdt6"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 2
 navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_218bo")
 sources/1 = SubResource("TileSetScenesCollectionSource_r051d")
@@ -191,8 +191,9 @@ layer_2/tile_data = PackedInt32Array(-196608, 1, 65536)
 
 [node name="Player" parent="." instance=ExtResource("5_ofhk2")]
 position = Vector2(-8, 24)
-scale = Vector2(0.11, 0.11)
-speed = 25
+scale = Vector2(0.1, 0.1)
+collision_mask = 14
+speed = 50
 
 [node name="health_ui" parent="." instance=ExtResource("6_raqga")]
 visible = false
@@ -206,287 +207,382 @@ scale = Vector2(0.13, 0.13)
 
 [node name="Maistas" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-24, 8)
+collision_layer = 4
 
 [node name="Maistas2" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-24, -8)
+collision_layer = 4
 
 [node name="Maistas3" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(8, 40)
+collision_layer = 4
 
 [node name="Maistas4" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(8, 24)
+collision_layer = 4
 
 [node name="Maistas5" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-24, 88)
+collision_layer = 4
 
 [node name="Maistas6" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-24, 72)
+collision_layer = 4
 
 [node name="Maistas7" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-24, 56)
+collision_layer = 4
 
 [node name="Maistas8" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-24, 40)
+collision_layer = 4
 
 [node name="Maistas9" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-24, 24)
+collision_layer = 4
 
 [node name="Maistas10" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-24, -56)
+collision_layer = 4
 
 [node name="Maistas11" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-24, -40)
+collision_layer = 4
 
 [node name="Maistas12" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-24, -24)
+collision_layer = 4
 
 [node name="Maistas13" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(24, 8)
+collision_layer = 4
 
 [node name="Maistas14" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(24, -8)
+collision_layer = 4
 
 [node name="Maistas15" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(24, 88)
+collision_layer = 4
 
 [node name="Maistas16" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(24, 72)
+collision_layer = 4
 
 [node name="Maistas17" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(24, 56)
+collision_layer = 4
 
 [node name="Maistas18" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(24, 40)
+collision_layer = 4
 
 [node name="Maistas19" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(24, 24)
+collision_layer = 4
 
 [node name="Maistas20" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(24, -56)
+collision_layer = 4
 
 [node name="Maistas21" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(24, -40)
+collision_layer = 4
 
 [node name="Maistas22" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(24, -24)
+collision_layer = 4
 
 [node name="Maistas23" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-8, 40)
+collision_layer = 4
 
 [node name="Maistas24" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(56, 72)
+collision_layer = 4
 
 [node name="Maistas25" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-56, 72)
+collision_layer = 4
 
 [node name="Maistas26" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-88, 56)
+collision_layer = 4
 
 [node name="Maistas27" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-88, 40)
+collision_layer = 4
 
 [node name="Maistas28" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-8, 88)
+collision_layer = 4
 
 [node name="Maistas29" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(8, 88)
+collision_layer = 4
 
 [node name="Maistas30" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-8, -72)
+collision_layer = 4
 
 [node name="Maistas31" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-8, -56)
+collision_layer = 4
 
 [node name="Maistas32" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-8, -40)
+collision_layer = 4
 
 [node name="Maistas33" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(8, -72)
+collision_layer = 4
 
 [node name="Maistas34" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(8, -56)
+collision_layer = 4
 
 [node name="Maistas35" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(8, -40)
+collision_layer = 4
 
 [node name="Maistas36" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-40, 88)
+collision_layer = 4
 
 [node name="Maistas37" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-40, 72)
+collision_layer = 4
 
 [node name="Maistas38" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-40, 56)
+collision_layer = 4
 
 [node name="Maistas39" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-40, 40)
+collision_layer = 4
 
 [node name="Maistas40" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(40, 88)
+collision_layer = 4
 
 [node name="Maistas41" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(40, 72)
+collision_layer = 4
 
 [node name="Maistas42" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(40, 56)
+collision_layer = 4
 
 [node name="Maistas43" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(40, 40)
+collision_layer = 4
 
 [node name="Maistas44" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-72, 88)
+collision_layer = 4
 
 [node name="Maistas45" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-56, 88)
+collision_layer = 4
 
 [node name="Maistas46" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-88, 88)
+collision_layer = 4
 
 [node name="Maistas47" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(72, 88)
+collision_layer = 4
 
 [node name="Maistas48" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(56, 88)
+collision_layer = 4
 
 [node name="Maistas49" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(88, 88)
+collision_layer = 4
 
 [node name="Maistas50" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(56, 8)
+collision_layer = 4
 
 [node name="Maistas51" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(56, -8)
+collision_layer = 4
 
 [node name="Maistas52" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(56, 40)
+collision_layer = 4
 
 [node name="Maistas53" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(56, 24)
+collision_layer = 4
 
 [node name="Maistas54" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(56, -24)
+collision_layer = 4
 
 [node name="Maistas55" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(72, 8)
+collision_layer = 4
 
 [node name="Maistas56" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(72, -8)
+collision_layer = 4
 
 [node name="Maistas57" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(72, 40)
+collision_layer = 4
 
 [node name="Maistas58" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(72, 24)
+collision_layer = 4
 
 [node name="Maistas59" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(72, -24)
+collision_layer = 4
 
 [node name="Maistas60" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-72, 8)
+collision_layer = 4
 
 [node name="Maistas61" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-72, -8)
+collision_layer = 4
 
 [node name="Maistas62" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-72, 40)
+collision_layer = 4
 
 [node name="Maistas63" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-72, 24)
+collision_layer = 4
 
 [node name="Maistas64" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-72, -24)
+collision_layer = 4
 
 [node name="Maistas65" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-56, 8)
+collision_layer = 4
 
 [node name="Maistas66" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-56, -8)
+collision_layer = 4
 
 [node name="Maistas67" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-56, 40)
+collision_layer = 4
 
 [node name="Maistas68" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-56, 24)
+collision_layer = 4
 
 [node name="Maistas69" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-56, -24)
+collision_layer = 4
 
 [node name="Maistas70" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(40, -8)
+collision_layer = 4
 
 [node name="Maistas71" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(40, -24)
+collision_layer = 4
 
 [node name="Maistas72" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(40, -72)
+collision_layer = 4
 
 [node name="Maistas73" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(40, -56)
+collision_layer = 4
 
 [node name="Maistas74" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(40, -40)
+collision_layer = 4
 
 [node name="Maistas75" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(88, -8)
+collision_layer = 4
 
 [node name="Maistas76" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(88, -24)
+collision_layer = 4
 
 [node name="Maistas77" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(88, -72)
+collision_layer = 4
 
 [node name="Maistas78" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(88, -56)
+collision_layer = 4
 
 [node name="Maistas79" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(88, -40)
+collision_layer = 4
 
 [node name="Maistas80" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-88, -8)
+collision_layer = 4
 
 [node name="Maistas81" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-88, -24)
+collision_layer = 4
 
 [node name="Maistas82" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-88, -72)
+collision_layer = 4
 
 [node name="Maistas83" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-88, -56)
+collision_layer = 4
 
 [node name="Maistas84" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-88, -40)
+collision_layer = 4
 
 [node name="Maistas85" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-40, -8)
+collision_layer = 4
 
 [node name="Maistas86" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-40, -24)
+collision_layer = 4
 
 [node name="Maistas87" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-40, -72)
+collision_layer = 4
 
 [node name="Maistas88" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-40, -56)
+collision_layer = 4
 
 [node name="Maistas89" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-40, -40)
+collision_layer = 4
 
 [node name="Maistas90" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-72, -72)
+collision_layer = 4
 
 [node name="Maistas91" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(-56, -72)
+collision_layer = 4
 
 [node name="Maistas92" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(56, -72)
+collision_layer = 4
 
 [node name="Maistas93" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(72, -72)
+collision_layer = 4
 
 [node name="Maistas94" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(88, 56)
+collision_layer = 4
 
 [node name="Maistas95" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(88, 40)
+collision_layer = 4
 
 [connection signal="child_entered_tree" from="TileMap" to="." method="_on_tile_map_child_entered_tree"]

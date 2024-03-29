@@ -11,7 +11,7 @@ var _seek = false
 @onready var sprite = $Sprite
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if player == null: return
 	nav_agent.target_position = player.global_position
 	if nav_agent.is_target_reached(): return
