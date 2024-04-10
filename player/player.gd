@@ -1,14 +1,13 @@
 extends CharacterBody2D
 class_name Player
-
-@export var speed = 50
+var speed = 50
 @export var health = 4
 var movement_direction = Vector2.ZERO
-
+@onready var home = get_tree().get_nodes_in_group("Markers")[1]
 signal health_changed(value)
 
 func _physics_process(delta):
-	if health <= 0:
+	if health == 0:
 		death()
 		
 	get_input()
@@ -29,6 +28,8 @@ func get_input():
 		movement_direction = Vector2.DOWN
 		rotation_degrees = 270
 
+func player():
+	pass
 
 func death():
 	queue_free()
@@ -36,3 +37,10 @@ func death():
 func take_damage():
 	health -= 1
 	emit_signal("health_changed", health)
+	position = home.position
+
+
+func _on_area_2d_body_entered(body):
+	if body.has_method("enemy"):
+		take_damage()
+		get_tree().get_nodes_in_group("enemy")[0].position = get_tree().get_nodes_in_group("Markers")[0].position
