@@ -5,13 +5,20 @@ class_name Enemy
 
 var player: Node2D
 
+var _seek = false
+
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var sprite = $Sprite
+
 
 func _physics_process(delta):
 	if player == null: return
 	nav_agent.target_position = player.global_position
 	if nav_agent.is_target_reached(): return
-	var next := nav_agent.get_next_path_position()
-	velocity = (next - global_position).normalized() * speed
-	move_and_slide()
+	if _seek:
+		var next := nav_agent.get_next_path_position()
+		velocity = (next - global_position).normalized() * speed
+		move_and_slide()
+	else:
+		_seek = true
+

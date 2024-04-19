@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do0pc4cfcd00s"
-path="res://.godot/imported/Pellet_Medium.png-9d2258af58cd76bd2b7f46392477e360.ctex"
+uid="uid://dsag08vygx4l0"
+path="res://.godot/imported/level_1.png-b0cf15ecbf76f8a45e1ab1fa81643218.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://level 1 map/Assests/Pellet_Medium.png"
-dest_files=["res://.godot/imported/Pellet_Medium.png-9d2258af58cd76bd2b7f46392477e360.ctex"]
+source_file="res://level/resources/level_1.png"
+dest_files=["res://.godot/imported/level_1.png-b0cf15ecbf76f8a45e1ab1fa81643218.ctex"]
 
 [params]
 

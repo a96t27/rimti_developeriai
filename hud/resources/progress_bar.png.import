@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d36sw7rrv23a6"
-path="res://.godot/imported/wall_atlas.png-2782641a854e81d806e98db3c5e15889.ctex"
+uid="uid://vojmnamx0j2g"
+path="res://.godot/imported/progress_bar.png-36192179f26074dade1a19035c19c091.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://level 1 map/Assests/wall_atlas.png"
-dest_files=["res://.godot/imported/wall_atlas.png-2782641a854e81d806e98db3c5e15889.ctex"]
+source_file="res://hud/resources/progress_bar.png"
+dest_files=["res://.godot/imported/progress_bar.png-36192179f26074dade1a19035c19c091.ctex"]
 
 [params]
 

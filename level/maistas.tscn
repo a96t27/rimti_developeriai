@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dtefi0mnenqeb"]
 
-[ext_resource type="Texture2D" uid="uid://do0pc4cfcd00s" path="res://level 1 map/Assests/Pellet_Medium.png" id="1_vqnde"]
+[ext_resource type="Texture2D" uid="uid://do0pc4cfcd00s" path="res://level/resources/food.png" id="1_vqnde"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prhnr"]
 size = Vector2(7, 7)
