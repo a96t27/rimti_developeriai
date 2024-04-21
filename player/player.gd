@@ -2,22 +2,21 @@ extends CharacterBody2D
 class_name Player
 
 @export var speed = 50
-@export var health = 4
+@export var max_health = 4
 
-var movement_direction = Vector2.ZERO
-var next_movement_direction = Vector2.ZERO
-var shape_query = PhysicsShapeQueryParameters2D.new()
-
+var current_health: int = max_health
+var movement_direction: Vector2 = Vector2.ZERO
+var next_movement_direction: Vector2 = Vector2.ZERO
+var shape_query: PhysicsShapeQueryParameters2D = PhysicsShapeQueryParameters2D.new()
 
 @onready var collision_shape_2d = $CollisionShape2D
-@onready var direction_pointer = $Direction_pointer
-
 
 signal health_changed(value)
 
-func _physics_process(delta):
-	if health <= 0:
+func _physics_process(delta: float) -> void:
+	if current_health <= 0:
 		death()
+		return
 		
 	get_input()
 	if movement_direction == Vector2.ZERO:
@@ -26,8 +25,8 @@ func _physics_process(delta):
 		movement_direction = next_movement_direction
 	velocity = movement_direction * speed
 	move_and_slide()
-	
-func get_input():
+
+func get_input() -> void:
 	if Input.is_action_pressed("move_left"):
 		next_movement_direction = Vector2.LEFT
 		rotation_degrees = 0
@@ -41,21 +40,19 @@ func get_input():
 		next_movement_direction = Vector2.DOWN
 		rotation_degrees = 270
 
-
-func death():
+func death() -> void:
 	get_tree().change_scene_to_file("res://game_over_menu/game_over_menu.tscn")
-
-func take_damage():
-	health -= 1
-	emit_signal("health_changed", health)
 	
+
+func take_damage() -> void:
+	current_health -= 1
+	emit_signal("health_changed", current_health)
+
 func can_move_in_direction(dir: Vector2, delta: float) -> bool:
 	shape_query.transform = global_transform.translated(dir * speed * delta * 2)
 	var result = get_world_2d().direct_space_state.intersect_shape(shape_query)
 	return result.size() == 0 
-	
-func _ready():
+
+func _ready() -> void:
 	shape_query.shape = collision_shape_2d.shape
-	#shape_query.collide_with_areas = false
-	#shape_query.collide_with_bodies = true
 	shape_query.collision_mask = 2
