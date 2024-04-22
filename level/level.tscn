@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://mgvj1w7ngr3l"]
+[gd_scene load_steps=20 format=3 uid="uid://mgvj1w7ngr3l"]
 
 [ext_resource type="Script" path="res://level/level.gd" id="1_3u22q"]
 [ext_resource type="PackedScene" uid="uid://cye6kookfgtq4" path="res://options_menu/options_menu.tscn" id="2_83b6k"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bmaiwmvso3ifw" path="res://hud/health_ui.tscn" id="6_raqga"]
 [ext_resource type="PackedScene" uid="uid://dolgbr0346iq8" path="res://player/testing/damage_object/damage_object.tscn" id="7_2xjwh"]
 [ext_resource type="PackedScene" uid="uid://dtefi0mnenqeb" path="res://level/maistas.tscn" id="8_3fbjr"]
+[ext_resource type="AudioStream" uid="uid://bcu7mun63lhf5" path="res://music/second_level_music.ogg" id="10_216ts"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_v5koi"]
 tile_data = PackedInt32Array(0, 0, 2, 65536, 0, 3, 1, 65536, 2, 65537, 65536, 3)
@@ -202,7 +203,7 @@ visible = false
 [node name="damage_object" parent="." instance=ExtResource("7_2xjwh")]
 visible = false
 position = Vector2(0, -50)
-scale = Vector2(0.13, 0.13)
+scale = Vector2(0.11, 0.11)
 collision_layer = 16
 collision_mask = 2
 
@@ -587,5 +588,9 @@ collision_layer = 4
 [node name="Maistas95" parent="Node" instance=ExtResource("8_3fbjr")]
 position = Vector2(88, 40)
 collision_layer = 4
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_216ts")
+autoplay = true
 
 [connection signal="child_entered_tree" from="TileMap" to="." method="_on_tile_map_child_entered_tree"]
