@@ -6,8 +6,6 @@ class_name Enemy
 var player: Node2D
 
 var _seek = false
-
-
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var sprite = $Sprite
 
@@ -22,6 +20,7 @@ func _physics_process(delta):
 		move_and_slide()
 	else:
 		_seek = true
+		
 
 
 func enemy():
