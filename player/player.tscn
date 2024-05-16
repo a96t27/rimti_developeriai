@@ -67,16 +67,18 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_c15kb"]
-radius = 65.0173
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5iqd"]
+size = Vector2(114, 114)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ax4lp"]
 radius = 93.1343
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
-collision_mask = 13
+collision_mask = 5
+motion_mode = 1
 script = ExtResource("1_oivvi")
+speed = 100
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 1.57079
@@ -86,15 +88,14 @@ animation = &"player"
 autoplay = "player"
 frame_progress = 0.994882
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
-shape = SubResource("CircleShape2D_c15kb")
+[node name="PlayerCollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_w5iqd")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
-collision_mask = 13
+collision_mask = 12
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="AreaCollisionShape" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_ax4lp")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

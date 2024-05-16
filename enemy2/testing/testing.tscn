@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://b5ad5hwbndo0y"]
+
+[ext_resource type="Script" path="res://enemy/testing/testing.gd" id="1_eb5qd"]
+[ext_resource type="Texture2D" uid="uid://bpfyylkehbukg" path="res://icon.svg" id="2_mvht4"]
+[ext_resource type="PackedScene" uid="uid://cxuc4hnxlqfuy" path="res://enemy2/enemy.tscn" id="3_ba2tx"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_bofhh"]
+vertices = PackedVector2Array(64, 64, -64, 64, -64, -64, 64, -64)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_civia"]
+resource_name = "floor"
+texture = ExtResource("2_mvht4")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/modulate = Color(1, 0.380392, 1, 0.717647)
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_bofhh")
+0:0/0/custom_data_0 = true
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_kq5r2"]
+scenes/1/scene = ExtResource("3_ba2tx")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_teai7"]
+resource_name = "wall"
+texture = ExtResource("2_mvht4")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/modulate = Color(0.266667, 0, 0.266667, 1)
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSet" id="TileSet_o2oc8"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
+custom_data_layer_0/name = "is_passable"
+custom_data_layer_0/type = 1
+sources/0 = SubResource("TileSetAtlasSource_civia")
+sources/1 = SubResource("TileSetScenesCollectionSource_kq5r2")
+sources/2 = SubResource("TileSetAtlasSource_teai7")
+
+[node name="Testing" type="Node2D"]
+script = ExtResource("1_eb5qd")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(322, 706)
+gizmo_extents = 66.5
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_o2oc8")
+format = 2
+layer_0/tile_data = PackedInt32Array(262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 196615, 0, 0, 196613, 0, 0, 131077, 0, 0, 65538, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 65543, 0, 0, 131079, 0, 0, 131078, 0, 0, 65537, 2, 0, 131073, 2, 0, 131075, 2, 0, 1, 2, 0, -65535, 2, 0, -65534, 2, 0, -65533, 2, 0, -65532, 2, 0, -65531, 2, 0, -65530, 2, 0, -65529, 2, 0, -65528, 2, 0, 8, 2, 0, 65544, 2, 0, 131080, 2, 0, 196616, 2, 0, 262152, 2, 0, 196614, 2, 0, 131076, 2, 0, 196612, 0, 0, 262148, 2, 0, 327684, 0, 0, 327685, 0, 0, 327686, 2, 0, 327687, 2, 0, 327688, 2, 0, 196611, 0, 0, 196610, 0, 0, 131074, 2, 0, 196609, 2, 0, 262146, 0, 0, 262145, 2, 0, 262147, 2, 0, 327683, 0, 0, 327682, 0, 0, 327681, 2, 0, 393217, 2, 0, 393218, 2, 0, 393219, 2, 0, 393220, 2, 0, 393221, 2, 0, 393222, 2, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0)
+layer_1/tile_data = PackedInt32Array(65538, 1, 65536)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(639, 407)
+zoom = Vector2(0.25, 0.25)
+
+[connection signal="child_entered_tree" from="TileMap" to="." method="_on_tile_map_child_entered_tree"]

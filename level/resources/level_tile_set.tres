@@ -1,10 +1,10 @@
-[gd_resource type="TileSet" load_steps=33 format=3 uid="uid://duj3heqhdaos"]
+[gd_resource type="TileSet" load_steps=34 format=3 uid="uid://dqmf7lq6a4elb"]
 
 [ext_resource type="Texture2D" uid="uid://djxgks2yjb4b8" path="res://level/resources/level_1.png" id="1_tcp7p"]
 [ext_resource type="PackedScene" uid="uid://wgxwlyn62tib" path="res://enemy/enemy.tscn" id="2_p8vxn"]
 [ext_resource type="PackedScene" uid="uid://dtefi0mnenqeb" path="res://level/maistas.tscn" id="3_tlbxt"]
 [ext_resource type="Texture2D" uid="uid://cuyjthyoh5m7v" path="res://level/resources/level_2.png" id="4_6l6ss"]
-[ext_resource type="PackedScene" uid="uid://b2ox2d0451yf6" path="res://enemy/enemy_3.tscn" id="4_tv3nj"]
+[ext_resource type="PackedScene" path="res://enemy/enemy_3.tscn" id="4_tv3nj"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_v5koi"]
 tile_data = PackedInt32Array(0, 0, 2, 65536, 0, 3, 1, 65536, 2, 65537, 65536, 3)
@@ -20,6 +20,9 @@ tile_data = PackedInt32Array(0, 393216, 1, 65536, 393216, 2, 131072, 393216, 3, 
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_o4lc0"]
 tile_data = PackedInt32Array(0, 131072, 2, 65536, 131072, 3)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kejkq"]
+friction = 0.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_2lnsi"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -772,6 +775,7 @@ texture = ExtResource("4_6l6ss")
 
 [resource]
 physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_kejkq")
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
