@@ -14,6 +14,7 @@ var shape_query: PhysicsShapeQueryParameters2D = PhysicsShapeQueryParameters2D.n
 
 @onready var collision_shape_2d: CollisionShape2D = $PlayerCollisionShape
 
+var food_count = 0
 
 func _ready():
 	shape_query.shape = collision_shape_2d.shape
@@ -32,6 +33,9 @@ func _physics_process(delta: float) -> void:
 	try_change_direction()
 	move_character(delta)
 
+func eat_food():
+	food_count = food_count+1
+	print(food_count)
 
 func get_input() -> void:
 	var dir = Vector2.ZERO
