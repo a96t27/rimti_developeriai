@@ -41,9 +41,9 @@ func eat_food():
 	print(name)
 	if(food_count == 94 && name == "res://level/level.tscn"):
 		get_tree().change_scene_to_file("res://level/level2.tscn")
-	elif(food_count == 69 && name == "res://level/level2.tscn"):
+	elif(food_count == 67 && name == "res://level/level2.tscn"):
 		get_tree().change_scene_to_file("res://level/level3.tscn")
-	elif(food_count == 404 && name == "res://level/level3.tscn"):
+	elif(food_count == 129 && name == "res://level/level3.tscn"):
 		get_tree().change_scene_to_file("res://level/winning_screen.tscn")
 	
 
