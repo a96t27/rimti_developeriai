@@ -48,11 +48,9 @@ func eat_food():
 		get_tree().change_scene_to_file(levels.level_2)
 	elif food_count == 67 && name == levels.level_2:
 		ScoreCount.curscene = levels.level_3
+		get_tree().change_scene_to_file(levels.level_3)
+	elif food_count == 267 && name == levels.level_3:
 		get_tree().change_scene_to_file("res://level/ending.tscn")
-		#get_tree().change_scene_to_file(levels.level_3)
-	elif food_count == 404 && name == levels.level_3:
-		get_tree().change_scene_to_file("res://level/winning_screen.tscn")
-	
 
 func get_input() -> void:
 	var dir = Vector2.ZERO
@@ -110,3 +108,4 @@ func _on_area_2d_body_entered(body):
 	if body.has_method("enemy"):
 		take_damage()
 		get_tree().get_nodes_in_group("enemy")[0].position = get_tree().get_nodes_in_group("Markers")[0].position
+		position = get_tree().get_nodes_in_group("Markers")[1].position
