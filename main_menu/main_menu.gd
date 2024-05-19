@@ -11,6 +11,7 @@ extends Control
 
 
 func on_play_pressed() -> void:
+	ScoreCount.curscene = "res://level/level.tscn"
 	get_tree().change_scene_to_packed(start_level)
 
 func on_exit_pressed() -> void:
