@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://wgxwlyn62tib" path="res://enemy/enemy.tscn" id="2_p8vxn"]
 [ext_resource type="PackedScene" uid="uid://dtefi0mnenqeb" path="res://level/maistas.tscn" id="3_tlbxt"]
 [ext_resource type="Texture2D" uid="uid://cuyjthyoh5m7v" path="res://level/resources/level_2.png" id="4_6l6ss"]
-[ext_resource type="PackedScene" uid="uid://b2ox2d0451yf6" path="res://enemy/enemy_3.tscn" id="4_tv3nj"]
+[ext_resource type="PackedScene" path="res://enemy/enemy_3.tscn" id="4_tv3nj"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_v5koi"]
 tile_data = PackedInt32Array(0, 0, 2, 65536, 0, 3, 1, 65536, 2, 65537, 65536, 3)

@@ -1,11 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://wgxwlyn62tib"]
+[gd_scene load_steps=5 format=3 uid="uid://wgxwlyn62tib"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_632ac"]
-[ext_resource type="Texture2D" uid="uid://1ngnf1igrafd" path="res://enemy/resources/enemy.png" id="2_5n7x1"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j7i4c"]
-atlas = ExtResource("2_5n7x1")
-region = Rect2(16, 0, 16, 16)
+[ext_resource type="SpriteFrames" uid="uid://dpg2qb1pddwnf" path="res://enemy/resources/enemy_frames.tres" id="2_keqoe"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iqq4r"]
 radius = 7.0
@@ -20,8 +16,10 @@ motion_mode = 1
 script = ExtResource("1_632ac")
 speed = 20
 
-[node name="Sprite" type="Sprite2D" parent="."]
-texture = SubResource("AtlasTexture_j7i4c")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_keqoe")
+animation = &"grandpa_down"
+autoplay = "grandpa_down"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_iqq4r")

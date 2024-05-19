@@ -17,7 +17,7 @@ func _ready():
 
 func _physics_process(delta):
 	if player == null: return
-	
+	_change_animation()
 	_time_since_last_update += delta
 	if _time_since_last_update >= update_interval:
 		_time_since_last_update = 0
@@ -30,6 +30,16 @@ func _physics_process(delta):
 		move_and_slide()
 	else:
 		_seek = true
+
+
+func _change_animation():
+	var angle = rad_to_deg(velocity.normalized().angle())
+	if angle < -30 and angle > -150:
+		sprite.play("grandma_up")
+	else:
+		sprite.play("grandma_down")
+	sprite.flip_h = abs(angle) > 90
+
 
 func update_target_position():
 	# Generate a random offset within the specified range using randf() and scaling

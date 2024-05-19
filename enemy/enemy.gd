@@ -7,11 +7,12 @@ var player: Node2D
 
 var _seek = false
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
-@onready var sprite = $Sprite
+@onready var sprite = $AnimatedSprite2D
 
 
 func _physics_process(delta):
 	if player == null: return
+	_change_animation()
 	nav_agent.target_position = player.global_position
 	if nav_agent.is_target_reached(): return
 	if _seek:
@@ -22,6 +23,13 @@ func _physics_process(delta):
 		_seek = true
 		
 
+func _change_animation():
+	var angle = rad_to_deg(velocity.normalized().angle())
+	if angle < -30 and angle > -150:
+		sprite.play("grandpa_up")
+	else:
+		sprite.play("grandpa_down")
+	sprite.flip_h = abs(angle) > 90
 
 func enemy():
 	pass

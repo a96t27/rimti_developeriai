@@ -7,6 +7,7 @@ var lastPosition : Vector2 = position
 var direction:  Vector2 = Vector2.ZERO
 
 func _physics_process(delta):
+	_change_animation()
 	if player == null: return
 	nav_agent.target_position = player.global_position
 	if timer.is_stopped() and lastPosition == position:
@@ -17,6 +18,17 @@ func _physics_process(delta):
 		move_and_slide()
 	else:
 		_seek = true
+
+
+func _change_animation():
+	var angle = rad_to_deg(velocity.normalized().angle())
+	if angle < -30 and angle > -150:
+		sprite.play("rabbit_up")
+	elif angle > 30 and angle < 150:
+		sprite.play("rabbit_down")
+	else:
+		sprite.play("rabbit_side")
+	sprite.flip_h = abs(angle) > 90
 
 
 func enemy():
