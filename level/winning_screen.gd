@@ -3,6 +3,12 @@ extends Control
 
 var main_menu: PackedScene = load("res://main_menu/main_menu.tscn")
 var start_level: PackedScene = load("res://level/level.tscn")
+
+
+func _ready():
+	$AnimationPlayer.play("open")
+
+
 func _on_restart_button_pressed():
 	get_tree().change_scene_to_packed(start_level)
 
