@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b4djelngtphgg" path="res://level/resources/ingredients.png" id="1_1375a"]
 [ext_resource type="Script" path="res://level/ending.gd" id="1_lqvt5"]
 [ext_resource type="Texture2D" uid="uid://bnot8fma11gdv" path="res://level/resources/player.png" id="2_n42mj"]
-[ext_resource type="Texture2D" path="res://level/resources/pizza.png" id="4_30kwy"]
+[ext_resource type="Texture2D" uid="uid://bsi6lf71usgp0" path="res://level/resources/pizza.png" id="4_30kwy"]
 
 [sub_resource type="Animation" id="Animation_kpgyk"]
 length = 4.0
