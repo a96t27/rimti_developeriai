@@ -48,7 +48,8 @@ func eat_food():
 		get_tree().change_scene_to_file(levels.level_2)
 	elif food_count == 67 && name == levels.level_2:
 		ScoreCount.curscene = levels.level_3
-		get_tree().change_scene_to_file(levels.level_3)
+		get_tree().change_scene_to_file("res://level/ending.tscn")
+		#get_tree().change_scene_to_file(levels.level_3)
 	elif food_count == 404 && name == levels.level_3:
 		get_tree().change_scene_to_file("res://level/winning_screen.tscn")
 	
