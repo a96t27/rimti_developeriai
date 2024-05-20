@@ -255,6 +255,17 @@ tracks/20/keys = {
 "transitions": PackedFloat32Array(),
 "values": []
 }
+tracks/21/type = "bezier"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("spinUpSound:volume_db")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_nf155"]
 resource_name = "ending"
@@ -546,6 +557,17 @@ tracks/23/keys = {
 "args": [0.0],
 "method": &"play"
 }]
+}
+tracks/24/type = "bezier"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("spinUpSound:volume_db")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(-6.98719e-09, -0.25, 0, 0.25, 0, -6.98719e-09, -0.25, 0, 0.25, 0, -80, -0.25, 0, 0.25, 0, -80, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.3, 2.6, 2.8)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ns6st"]
