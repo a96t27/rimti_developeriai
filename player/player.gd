@@ -11,11 +11,7 @@ var movement_direction: Vector2 = Vector2.ZERO
 var next_movement_direction: Vector2 = Vector2.ZERO
 var home: Marker2D
 var shape_query: PhysicsShapeQueryParameters2D = PhysicsShapeQueryParameters2D.new()
-var levels := {
-	level_1 = "res://level/level.tscn",
-	level_2 = "res://level/level2.tscn",
-	level_3 = "res://level/level3.tscn",
-}
+
 @onready var collision_shape_2d: CollisionShape2D = $PlayerCollisionShape
 
 var food_count = 0
@@ -36,19 +32,6 @@ func _physics_process(delta: float) -> void:
 	get_input()
 	try_change_direction()
 	move_character(delta)
-
-func eat_food():
-	food_count = food_count+1
-	var name = get_tree().current_scene.scene_file_path
-	
-	if food_count == 94 && name == levels.level_1:
-		ScoreCount.curscene = levels.level_2
-		get_tree().change_scene_to_file(levels.level_2)
-	elif food_count == 67 && name == levels.level_2:
-		ScoreCount.curscene = levels.level_3
-		get_tree().change_scene_to_file(levels.level_3)
-	elif food_count == 129 && name == levels.level_3:
-		get_tree().change_scene_to_file("res://level/ending.tscn")
 
 func get_input() -> void:
 	var dir = Vector2.ZERO
@@ -79,7 +62,7 @@ func take_damage() -> void:
 
 
 func can_move_in_direction(dir: Vector2, delta: float) -> bool:
-	shape_query.transform = global_transform.translated(dir * (speed * delta + 1))
+	shape_query.transform = global_transform.translated(dir * (speed * delta + 0.5))
 	var result = get_world_2d().direct_space_state.intersect_shape(shape_query)
 	return result.size() == 0 
 

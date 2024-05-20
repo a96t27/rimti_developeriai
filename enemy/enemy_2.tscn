@@ -5,5 +5,9 @@
 
 [node name="Enemy" instance=ExtResource("1_gib4p")]
 script = ExtResource("2_05ar5")
+speed = 100
 update_interval = 1.0
-offset_range = Vector2(64, 64)
+offset_range = Vector2(128, 128)
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+animation = &"rabbit_idle"

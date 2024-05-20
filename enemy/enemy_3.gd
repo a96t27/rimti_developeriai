@@ -2,14 +2,18 @@ extends Enemy
 class_name Enemy_3
 
 var lastPosition : Vector2 = position
-@onready var timer = $Timer
-
 var direction:  Vector2 = Vector2.ZERO
+
+@onready var timer = $Timer
+@onready var ray = $Ray
+
+func _ready():
+	nav_agent.target_position = player.global_position
+
 
 func _physics_process(delta):
 	_change_animation()
 	if player == null: return
-	nav_agent.target_position = player.global_position
 	if timer.is_stopped() and lastPosition == position:
 		timer.start()
 	lastPosition = position

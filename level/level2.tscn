@@ -27,3 +27,5 @@ max_health = 4
 stream = ExtResource("2_5nwdf")
 autoplay = true
 bus = &"Music"
+
+[editable path="health_ui"]

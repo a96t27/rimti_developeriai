@@ -13,6 +13,7 @@ var _time_since_last_update = 0.0
 @export var offset_range: Vector2 = Vector2(200, 200)  # Change the values to set the range of the offset
 
 func _ready():
+	sprite.play("rabbit_idle")
 	randomize()  # Ensure random numbers are less predictable
 
 func _physics_process(delta):
@@ -30,6 +31,9 @@ func _physics_process(delta):
 		move_and_slide()
 	else:
 		_seek = true
+
+func enemy():
+	pass
 
 
 func _change_animation():
