@@ -9,6 +9,7 @@ var levels := {
 	level_3 = "res://level/level3.tscn",
 }
 
+var maxpoint: = 0
 @onready var player: Player = $Player
 @onready var animation_player = $AnimationPlayer
 
@@ -21,18 +22,14 @@ func _on_tile_map_child_entered_tree(node):
 		node.player = player
 		return
 	if node is Maistas:
+		maxpoint += 1
 		node.maistas_suvalgytas.connect(_on_eat_food)
 
 func _on_eat_food():
 	$FoodEeatingSound.play()
 	food_count = food_count+1
 	var name = get_tree().current_scene.scene_file_path
-	
-	if food_count == 94 && name == levels.level_1:
-		animation_player.play("scene_switch")
-	elif food_count == 67 && name == levels.level_2:
-		animation_player.play("scene_switch")
-	elif food_count == 129 && name == levels.level_3:
+	if food_count == maxpoint:
 		animation_player.play("scene_switch")
 
 func next_level():
