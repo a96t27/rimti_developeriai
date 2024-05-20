@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://mgvj1w7ngr3l"]
+[gd_scene load_steps=14 format=3 uid="uid://mgvj1w7ngr3l"]
 
 [ext_resource type="Script" path="res://level/level.gd" id="1_3u22q"]
 [ext_resource type="PackedScene" uid="uid://cye6kookfgtq4" path="res://options_menu/options_menu.tscn" id="2_83b6k"]
@@ -8,6 +8,301 @@
 [ext_resource type="PackedScene" uid="uid://bmaiwmvso3ifw" path="res://hud/health_ui.tscn" id="6_raqga"]
 [ext_resource type="PackedScene" uid="uid://dolgbr0346iq8" path="res://player/testing/damage_object/damage_object.tscn" id="7_2xjwh"]
 [ext_resource type="AudioStream" uid="uid://cuvvi4x4q4cyc" path="res://music/first_level_music.ogg" id="8_k6r07"]
+[ext_resource type="AudioStream" uid="uid://b1hsnhfg8h0ok" path="res://music/eatingSound.mp3" id="9_tic0f"]
+
+[sub_resource type="Animation" id="Animation_lkail"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("health_ui/HealthUIEmpty:modulate:r")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("health_ui/HealthUIEmpty:modulate:g")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("health_ui/HealthUIEmpty:modulate:b")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("health_ui/HealthUIEmpty:modulate:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("health_ui/HealthUIFull:modulate:r")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("health_ui/HealthUIFull:modulate:g")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("health_ui/HealthUIFull:modulate:b")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("health_ui/HealthUIFull:modulate:a")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath(".:process_mode")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_3ovd3"]
+resource_name = "scene_starting"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("health_ui/HealthUIEmpty:modulate:r")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("health_ui/HealthUIEmpty:modulate:g")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("health_ui/HealthUIEmpty:modulate:b")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("health_ui/HealthUIEmpty:modulate:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("health_ui/HealthUIFull:modulate:r")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("health_ui/HealthUIFull:modulate:g")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("health_ui/HealthUIFull:modulate:b")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("health_ui/HealthUIFull:modulate:a")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath(".:process_mode")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 0]
+}
 
 [sub_resource type="Animation" id="Animation_pfmv7"]
 resource_name = "scene_switch"
@@ -171,300 +466,6 @@ tracks/13/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_3ovd3"]
-resource_name = "scene_starting"
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate:r")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate:g")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:modulate:b")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:modulate:a")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("health_ui/HealthUIEmpty:modulate:r")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("health_ui/HealthUIEmpty:modulate:g")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/6/type = "bezier"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("health_ui/HealthUIEmpty:modulate:b")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/7/type = "bezier"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("health_ui/HealthUIEmpty:modulate:a")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/8/type = "bezier"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("health_ui/HealthUIFull:modulate:r")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/9/type = "bezier"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("health_ui/HealthUIFull:modulate:g")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/10/type = "bezier"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("health_ui/HealthUIFull:modulate:b")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/11/type = "bezier"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("health_ui/HealthUIFull:modulate:a")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath(".:process_mode")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [4, 0]
-}
-
-[sub_resource type="Animation" id="Animation_lkail"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate:r")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate:g")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:modulate:b")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:modulate:a")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("health_ui/HealthUIEmpty:modulate:r")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("health_ui/HealthUIEmpty:modulate:g")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/6/type = "bezier"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("health_ui/HealthUIEmpty:modulate:b")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/7/type = "bezier"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("health_ui/HealthUIEmpty:modulate:a")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/8/type = "bezier"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("health_ui/HealthUIFull:modulate:r")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/9/type = "bezier"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("health_ui/HealthUIFull:modulate:g")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/10/type = "bezier"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("health_ui/HealthUIFull:modulate:b")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/11/type = "bezier"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("health_ui/HealthUIFull:modulate:a")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath(".:process_mode")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hcw6m"]
 _data = {
 "RESET": SubResource("Animation_lkail"),
@@ -541,6 +542,104 @@ libraries = {
 "": SubResource("AnimationLibrary_hcw6m")
 }
 
+[node name="FoodEeatingSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_tic0f")
+bus = &"SFX"
+
 [connection signal="child_entered_tree" from="TileMap" to="." method="_on_tile_map_child_entered_tree"]
+[connection signal="body_entered" from="TileMap/Maistas" to="TileMap/Maistas" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28794" to="TileMap/@Area2D@28794" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28795" to="TileMap/@Area2D@28795" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28796" to="TileMap/@Area2D@28796" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28797" to="TileMap/@Area2D@28797" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28798" to="TileMap/@Area2D@28798" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28799" to="TileMap/@Area2D@28799" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28800" to="TileMap/@Area2D@28800" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28801" to="TileMap/@Area2D@28801" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28802" to="TileMap/@Area2D@28802" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28803" to="TileMap/@Area2D@28803" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28804" to="TileMap/@Area2D@28804" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28805" to="TileMap/@Area2D@28805" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28806" to="TileMap/@Area2D@28806" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28807" to="TileMap/@Area2D@28807" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28808" to="TileMap/@Area2D@28808" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28809" to="TileMap/@Area2D@28809" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28810" to="TileMap/@Area2D@28810" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28811" to="TileMap/@Area2D@28811" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28812" to="TileMap/@Area2D@28812" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28813" to="TileMap/@Area2D@28813" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28814" to="TileMap/@Area2D@28814" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28815" to="TileMap/@Area2D@28815" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28816" to="TileMap/@Area2D@28816" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28817" to="TileMap/@Area2D@28817" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28818" to="TileMap/@Area2D@28818" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28819" to="TileMap/@Area2D@28819" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28820" to="TileMap/@Area2D@28820" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28821" to="TileMap/@Area2D@28821" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28822" to="TileMap/@Area2D@28822" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28823" to="TileMap/@Area2D@28823" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28824" to="TileMap/@Area2D@28824" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28825" to="TileMap/@Area2D@28825" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28826" to="TileMap/@Area2D@28826" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28827" to="TileMap/@Area2D@28827" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28828" to="TileMap/@Area2D@28828" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28829" to="TileMap/@Area2D@28829" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28830" to="TileMap/@Area2D@28830" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28831" to="TileMap/@Area2D@28831" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28832" to="TileMap/@Area2D@28832" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28833" to="TileMap/@Area2D@28833" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28834" to="TileMap/@Area2D@28834" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28835" to="TileMap/@Area2D@28835" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28836" to="TileMap/@Area2D@28836" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28837" to="TileMap/@Area2D@28837" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28838" to="TileMap/@Area2D@28838" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28839" to="TileMap/@Area2D@28839" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28840" to="TileMap/@Area2D@28840" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28841" to="TileMap/@Area2D@28841" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28842" to="TileMap/@Area2D@28842" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28843" to="TileMap/@Area2D@28843" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28844" to="TileMap/@Area2D@28844" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28845" to="TileMap/@Area2D@28845" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28846" to="TileMap/@Area2D@28846" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28847" to="TileMap/@Area2D@28847" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28848" to="TileMap/@Area2D@28848" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28849" to="TileMap/@Area2D@28849" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28850" to="TileMap/@Area2D@28850" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28851" to="TileMap/@Area2D@28851" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28852" to="TileMap/@Area2D@28852" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28853" to="TileMap/@Area2D@28853" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28854" to="TileMap/@Area2D@28854" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28855" to="TileMap/@Area2D@28855" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28856" to="TileMap/@Area2D@28856" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28857" to="TileMap/@Area2D@28857" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28858" to="TileMap/@Area2D@28858" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28859" to="TileMap/@Area2D@28859" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28860" to="TileMap/@Area2D@28860" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28861" to="TileMap/@Area2D@28861" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28862" to="TileMap/@Area2D@28862" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28863" to="TileMap/@Area2D@28863" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28864" to="TileMap/@Area2D@28864" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28865" to="TileMap/@Area2D@28865" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28866" to="TileMap/@Area2D@28866" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28867" to="TileMap/@Area2D@28867" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28868" to="TileMap/@Area2D@28868" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28869" to="TileMap/@Area2D@28869" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28870" to="TileMap/@Area2D@28870" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28871" to="TileMap/@Area2D@28871" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28872" to="TileMap/@Area2D@28872" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28873" to="TileMap/@Area2D@28873" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28874" to="TileMap/@Area2D@28874" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28875" to="TileMap/@Area2D@28875" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28876" to="TileMap/@Area2D@28876" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28877" to="TileMap/@Area2D@28877" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28878" to="TileMap/@Area2D@28878" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28879" to="TileMap/@Area2D@28879" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28880" to="TileMap/@Area2D@28880" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28881" to="TileMap/@Area2D@28881" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28882" to="TileMap/@Area2D@28882" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28883" to="TileMap/@Area2D@28883" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28884" to="TileMap/@Area2D@28884" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28885" to="TileMap/@Area2D@28885" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@28886" to="TileMap/@Area2D@28886" method="_on_body_entered"]
 
 [editable path="health_ui"]

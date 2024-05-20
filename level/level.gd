@@ -24,6 +24,7 @@ func _on_tile_map_child_entered_tree(node):
 		node.maistas_suvalgytas.connect(_on_eat_food)
 
 func _on_eat_food():
+	$FoodEeatingSound.play()
 	food_count = food_count+1
 	var name = get_tree().current_scene.scene_file_path
 	
