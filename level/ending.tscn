@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://duejdlgan6hl6"]
+[gd_scene load_steps=23 format=3 uid="uid://duejdlgan6hl6"]
 
 [ext_resource type="Texture2D" uid="uid://b4djelngtphgg" path="res://level/resources/ingredients.png" id="1_1375a"]
 [ext_resource type="Script" path="res://level/ending.gd" id="1_lqvt5"]
 [ext_resource type="Texture2D" uid="uid://bnot8fma11gdv" path="res://level/resources/player.png" id="2_n42mj"]
 [ext_resource type="Texture2D" uid="uid://bsi6lf71usgp0" path="res://level/resources/pizza.png" id="4_30kwy"]
+[ext_resource type="AudioStream" uid="uid://djhuqjlrww7tb" path="res://music/spinupSound.mp3" id="5_kyuym"]
 
 [sub_resource type="Animation" id="Animation_kpgyk"]
 length = 4.0
@@ -242,6 +243,17 @@ tracks/19/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
+}
+tracks/20/type = "method"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("spinUpSound")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
 }
 
 [sub_resource type="Animation" id="Animation_nf155"]
@@ -521,6 +533,20 @@ tracks/22/keys = {
 "method": &"to_wining_screen"
 }]
 }
+tracks/23/type = "method"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("spinUpSound")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ns6st"]
 _data = {
@@ -659,3 +685,6 @@ position = Vector2(243, 129)
 emitting = false
 process_material = SubResource("ParticleProcessMaterial_npv7t")
 texture = ExtResource("1_1375a")
+
+[node name="spinUpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_kyuym")

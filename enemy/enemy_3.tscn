@@ -5,13 +5,13 @@
 
 [node name="Enemy3" instance=ExtResource("1_kx3hp")]
 script = ExtResource("2_f1lte")
-speed = 120
+speed = 100
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 animation = &"grandma_idle"
 
 [node name="Timer" type="Timer" parent="." index="4"]
-wait_time = 2.0
+wait_time = 1.5
 one_shot = true
 autostart = true
 

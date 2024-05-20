@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgs3b2e3u6ndb"]
+[gd_scene load_steps=3 format=3 uid="uid://dgs3b2e3u6ndb"]
 
 [ext_resource type="Script" path="res://game_over_menu/game_over_menu.gd" id="1_hpki4"]
+[ext_resource type="AudioStream" uid="uid://dyxw8y2uy5l30" path="res://music/loserSound.mp3" id="2_fd50e"]
 
 [node name="gameover" type="Control"]
 layout_mode = 3
@@ -53,6 +54,9 @@ text = "Main Menu"
 [node name="quit" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 text = "Quit Game"
+
+[node name="LoserSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_fd50e")
 
 [connection signal="pressed" from="Panel/VBoxContainer/retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/mainmenu" to="." method="_on_mainmenu_pressed"]

@@ -56,10 +56,11 @@ func death() -> void:
 
 
 func take_damage() -> void:
+	$damageSound.play()
 	current_health -= 1
 	emit_signal("health_changed", current_health)
 
-
+"res://music/damageSound.mp3"
 func can_move_in_direction(dir: Vector2, delta: float) -> bool:
 	shape_query.transform = global_transform.translated(dir * (speed * delta + 0.5))
 	var result = get_world_2d().direct_space_state.intersect_shape(shape_query)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://dea04121a8d5g"]
+[gd_scene load_steps=15 format=3 uid="uid://dea04121a8d5g"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_oivvi"]
 [ext_resource type="Texture2D" uid="uid://bnot8fma11gdv" path="res://level/resources/player.png" id="2_ddlj3"]
+[ext_resource type="AudioStream" uid="uid://fp588w678njg" path="res://music/damageSound.mp3" id="3_j5hpn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1k1b"]
 atlas = ExtResource("2_ddlj3")
@@ -99,5 +100,9 @@ collision_mask = 12
 
 [node name="AreaCollisionShape" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_ax4lp")
+
+[node name="damageSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_j5hpn")
+bus = &"SFX"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -2,6 +2,8 @@ class_name gameOverPanel
 extends Control
 
 
+func _ready():
+	$LoserSound.play()
 
 func _on_retry_pressed():
 	get_tree().change_scene_to_file(ScoreCount.curscene)

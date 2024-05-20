@@ -7,6 +7,8 @@ var start_level: PackedScene = load("res://level/level.tscn")
 
 func _ready():
 	$AnimationPlayer.play("open")
+	$WinnerSound.play()
+	
 
 
 func _on_restart_button_pressed():
