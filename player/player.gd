@@ -11,7 +11,6 @@ var movement_direction: Vector2 = Vector2.ZERO
 var next_movement_direction: Vector2 = Vector2.ZERO
 var home: Marker2D
 var shape_query: PhysicsShapeQueryParameters2D = PhysicsShapeQueryParameters2D.new()
-
 @onready var collision_shape_2d: CollisionShape2D = $PlayerCollisionShape
 
 var food_count = 0
