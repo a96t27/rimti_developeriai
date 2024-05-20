@@ -23,16 +23,10 @@ func _physics_process(delta):
 func _change_animation():
 	var angle = rad_to_deg(velocity.normalized().angle())
 	if angle < -30 and angle > -150:
-		sprite.play("rabbit_up")
-	elif angle > 30 and angle < 150:
-		sprite.play("rabbit_down")
+		sprite.play("grandma_up")
 	else:
-		sprite.play("rabbit_side")
+		sprite.play("grandma_down")
 	sprite.flip_h = abs(angle) > 90
-
-
-func enemy():
-	pass
 
 
 func _on_timer_timeout():

@@ -1,10 +1,11 @@
-[gd_resource type="TileSet" load_steps=34 format=3 uid="uid://dqmf7lq6a4elb"]
+[gd_resource type="TileSet" load_steps=35 format=3 uid="uid://dqmf7lq6a4elb"]
 
 [ext_resource type="Texture2D" uid="uid://djxgks2yjb4b8" path="res://level/resources/level_1.png" id="1_tcp7p"]
 [ext_resource type="PackedScene" uid="uid://wgxwlyn62tib" path="res://enemy/enemy.tscn" id="2_p8vxn"]
 [ext_resource type="PackedScene" uid="uid://dtefi0mnenqeb" path="res://level/maistas.tscn" id="3_tlbxt"]
 [ext_resource type="Texture2D" uid="uid://cuyjthyoh5m7v" path="res://level/resources/level_2.png" id="4_6l6ss"]
 [ext_resource type="PackedScene" uid="uid://bynxk4oti0pde" path="res://enemy/enemy_3.tscn" id="4_tv3nj"]
+[ext_resource type="PackedScene" uid="uid://brqf6yv6imp4e" path="res://enemy/enemy_2.tscn" id="5_3dwfc"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_v5koi"]
 tile_data = PackedInt32Array(0, 0, 2, 65536, 0, 3, 1, 65536, 2, 65537, 65536, 3)
@@ -154,6 +155,7 @@ resource_name = "enities"
 scenes/1/scene = ExtResource("2_p8vxn")
 scenes/2/scene = ExtResource("3_tlbxt")
 scenes/3/scene = ExtResource("4_tv3nj")
+scenes/4/scene = ExtResource("5_3dwfc")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_vfpmu"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)

@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name Enemy2
+class_name Enemy_2
 
 @export_range(0, 500, 1, "or_greater") var speed = 100
 @export var update_interval = 1.0  # Time in seconds to update the target position
@@ -9,7 +9,7 @@ var _seek = false
 var _time_since_last_update = 0.0
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
-@onready var sprite = $Sprite
+@onready var sprite = $AnimatedSprite2D
 @export var offset_range: Vector2 = Vector2(200, 200)  # Change the values to set the range of the offset
 
 func _ready():
@@ -35,9 +35,11 @@ func _physics_process(delta):
 func _change_animation():
 	var angle = rad_to_deg(velocity.normalized().angle())
 	if angle < -30 and angle > -150:
-		sprite.play("grandma_up")
+		sprite.play("rabbit_up")
+	elif angle > 30 and angle < 150:
+		sprite.play("rabbit_down")
 	else:
-		sprite.play("grandma_down")
+		sprite.play("rabbit_side")
 	sprite.flip_h = abs(angle) > 90
 
 

@@ -39,17 +39,15 @@ func _physics_process(delta: float) -> void:
 
 func eat_food():
 	food_count = food_count+1
-	print(food_count)
 	var name = get_tree().current_scene.scene_file_path
 	
-	print(name)
 	if food_count == 94 && name == levels.level_1:
 		ScoreCount.curscene = levels.level_2
 		get_tree().change_scene_to_file(levels.level_2)
 	elif food_count == 67 && name == levels.level_2:
 		ScoreCount.curscene = levels.level_3
 		get_tree().change_scene_to_file(levels.level_3)
-	elif food_count == 267 && name == levels.level_3:
+	elif food_count == 129 && name == levels.level_3:
 		get_tree().change_scene_to_file("res://level/ending.tscn")
 
 func get_input() -> void:
